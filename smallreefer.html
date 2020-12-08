@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>COVID'19 Vaccine Estimator</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="css/opensans-font.css">
+	<link rel="stylesheet" type="text/css" href="fonts/line-awesome/css/line-awesome.min.css">
+	<!-- Jquery -->
+	<link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="css/style.css"/>
+    
+    <script>
+    function resultBy()
+{
+        num1 = document.getElementById("population").value;
+        document.getElementById("result").innerHTML = Math.round(num1*20);
+}
+
+</script>
+</head>
+<body class="form-v4">
+	<div class="page-content">
+		<div class="form-v4-content">
+			<div class="form-left">
+				<h2>INFORMATION</h2>
+				<p class="text-1">Analytical metapopulation models are better
+for deriving general insights. </p>
+				<p class="text-2">Vax India Tech uses a microsimulation approach to obtain
+problem specific results. We have developed a microsimulation based interactive calculator. </p>
+				<div class="form-left-last">
+					<input type="submit" name="account" class="account" value="Try Now">
+				</div>
+			</div>
+			<form class="form-detail" action="#" method="post" id="myform">
+				<h2>SMALL REEFER ESTIMATOR</h2>
+				<div class="form-group">
+					<div class="form-row form-row-1">
+						<label for="first_name">Population (in Crores)</label>
+						<input type="text" name="population" id="population" class="input-text">
+					</div>
+					
+				</div>
+				
+				
+				<div class="form-row-last">
+                   
+					<input type="submit" onClick="resultBy()" name="register" class="register" value="Calculate">
+				</div>
+                <div class="form-group">
+					<div class="form-row form-row-1">
+						<label for="first_name">Number of Small Reefer Containers</label>
+                      
+                        <span id = "result"></span>
+					</div>
+					
+				</div>
+                
+              
+			</form>
+            
+            
+		</div>
+	</div>
+    
+   
+    
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	<script>
+		// just for the demos, avoids form submit
+		jQuery.validator.setDefaults({
+		  	debug: true,
+		  	success:  function(label){
+        		label.attr('id', 'valid');
+   		 	},
+		});
+		$( "#myform" ).validate({
+		  	rules: {
+			    password: "required",
+		    	comfirm_password: {
+		      		equalTo: "#password"
+		    	}
+		  	},
+		  	messages: {
+		  		first_name: {
+		  			required: "Please enter a firstname"
+		  		},
+		  		last_name: {
+		  			required: "Please enter a lastname"
+		  		},
+		  		your_email: {
+		  			required: "Please provide an email"
+		  		},
+		  		password: {
+	  				required: "Please enter a password"
+		  		},
+		  		comfirm_password: {
+		  			required: "Please enter a password",
+		      		equalTo: "Wrong Password"
+		    	}
+		  	}
+		});
+	</script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
